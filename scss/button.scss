@@ -1,0 +1,94 @@
+$primary-color: #10b981;
+$primary-bg: #f5f5f5;
+$primary-text-color: #2b2626;
+$primary-hover: #048564;
+
+button {
+    cursor: pointer;
+    &:active {
+        transform: scale(0.98);
+        box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    }
+    &:hover {
+        border: 1px solid $primary-hover;
+        background-color: $primary-hover;
+    }
+}
+.enter:hover {
+    border: 1px solid $primary-hover;
+    background-color: $primary-hover;
+}
+
+.button-card {
+    width: 263px;
+    height: 70px;
+    background-color: $primary-color;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 21px;
+    line-height: 26px;
+    font-weight: 600;
+    border: none;
+    &_product-descr {
+        margin-top: 35px;
+    }
+    &_footer {
+        border-radius: none;
+        width: 175px;
+        height: 50px;
+    }
+}
+.button-outline {
+    background-color: transparent;
+    color: #fff;
+    font-size: 21px;
+    line-height: 35px;
+    font-weight: 600;
+    border: none;
+    &_product-descr {
+        margin-left: 49px;
+    }
+}
+.button-outline:hover,
+.button-oval:hover {
+    border: none;
+    background-color: transparent;
+}
+.button-outline:active,
+.button-oval:active {
+    transform: none;
+    box-shadow: none;
+}
+.button-oval {
+    width: 177px;
+    height: 91px;
+    border-radius: 50%;
+    background-color: $primary-bg;
+    color: $primary-text-color;
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 600;
+    border: none;
+}
+.active {
+    width: 177px;
+    height: 91px;
+    border-radius: 50%;
+    background-color: $primary-color;
+    color: #fff;
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 600;
+    border: none;
+}
+@media (max-width: 568px) {
+    .button-oval {
+        width: 151px;
+        height: 68px;
+
+        font-size: 22px;
+    }
+    .button-card_footer {
+        width: 100%;
+    }
+}
