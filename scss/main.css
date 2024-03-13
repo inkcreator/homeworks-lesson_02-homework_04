@@ -60,10 +60,7 @@ button:hover {
 .button-oval {
   width: 177px;
   height: 91px;
-  /* border-radius: 50%; */
-  /* background-color: $primary-bg; */
   background-color: transparent;
-  /* color: $primary-text-color; */
   color: black;
   font-size: 26px;
   line-height: 32px;
@@ -77,16 +74,10 @@ button:hover {
   color: #fff;
 }
 
-.active {
-  width: 177px;
-  height: 91px;
-  border-radius: 50%;
+.button-oval.active {
   background-color: #10b981;
+  border-radius: 50%;
   color: #fff;
-  font-size: 26px;
-  line-height: 32px;
-  font-weight: 600;
-  border: none;
 }
 
 @media (max-width: 568px) {
@@ -245,6 +236,43 @@ body {
   cursor: pointer;
   right: 70px;
   top: 50px;
+}
+
+.welcome-popup {
+  background-color: rgba(132, 94, 194, 0.15);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-popup__wrapper {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.welcome-popup__button {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0px 10px;
+}
+
+p {
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 35px;
+  color: #2b2626;
 }
 
 .header {

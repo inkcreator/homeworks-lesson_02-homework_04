@@ -1,25 +1,45 @@
-const mobileMenu = document.querySelector(".mobile-menu");
-const header = document.querySelector(".header");
-const products = document.querySelector(".products");
-const sellers = document.querySelector(".sellers");
-const earphones = document.querySelector(".earphones");
-const launches = document.querySelector(".launches");
+const mobileMenu = document.querySelector('.mobile-menu')
+const header = document.querySelector('.header')
+ 
 
-document.querySelector(".menu_button").addEventListener("click", (event) => {
-  mobileMenu.classList.remove("hidden");
-  mobileMenu.classList.add("visible");
-});
+const links = {
+    products:document.querySelector('#products'),
+    sellers:document.querySelector('#sellers'),
+    earphones: document.querySelector('#earphones'),
+    launches: document.querySelector('#launches'),
+}
 
-mobileMenu
-  .querySelector(".mobile-menu__close")
-  .addEventListener("click", (event) => {
-    mobileMenu.classList.remove("visible");
-    mobileMenu.classList.add("hidden");
-  });
+document.querySelector('.menu_button').addEventListener('click',(event)=>{
+    mobileMenu.classList.remove('hidden')
+    mobileMenu.classList.add('visible')
+})
 
-// function scrollToSection(event) {
-//   console.log(event.target);
-// }
+mobileMenu.querySelector('.mobile-menu__close')
+    .addEventListener('click',(event)=>{
+        mobileMenu.classList.remove('visible')
+        mobileMenu.classList.add('hidden')
+        
+})
 
-// mobileMenu.addEventListener("click", scrollToSection);
-// header.addEventListener("click", scrollToSection);
+function scrollToSection(event){
+    const classes = event.target.className
+    // console.log(classes.includes('menu-link'))
+    if(classes.includes('menu-link')){
+        const content = event.target.innerText
+        switch(content){
+            case 'Features':
+                console.log("Features")
+                links.products.scrollIntoView()
+            case 'Sellers':
+                links.sellers.scrollIntoView()
+            case 'Earphones':
+                links.earphones.scrollIntoView()
+            case 'Launches':
+                links.launches.scrollIntoView()
+        }   
+    }
+}
+
+
+mobileMenu.addEventListener('click',scrollToSection)
+header.addEventListener('click',scrollToSection)

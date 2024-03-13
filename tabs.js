@@ -1,6 +1,3 @@
-let div = document.createElement("div");
-
-
 
 const earphonesTabCardWrapper = document.querySelector('.earphones').querySelector(".tab__card-wrapper");
 const sellersTabCardWrapper = document.querySelector('.sellers').querySelector(".tab__card-wrapper");
