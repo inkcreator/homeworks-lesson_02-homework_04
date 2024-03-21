@@ -39,17 +39,17 @@ function getCards(cardInfoList, elem) {
         <div class="card__product">
           <img
             class="card__img"
-            src="./assets/card__headphons.png"
+            src="/src/assets/card__headphons.png"
             alt="card__headphons"
           />
           <div class="card__descr">
             <h4 class="card__text">${cardInfo.cardTitle}</h4>
             <div class="card__rating">
-              <img src="./assets/red__star.svg" alt="rating" />
-              <img src="./assets/red__star.svg" alt="rating" />
-              <img src="./assets/red__star.svg" alt="rating" />
-              <img src="./assets/red__star.svg" alt="rating" />
-              <img src="./assets/red__star.svg" alt="rating" />
+              <img src="/src/assets/red__star.svg" alt="rating" />
+              <img src="/src/assets/red__star.svg" alt="rating" />
+              <img src="/src/assets/red__star.svg" alt="rating" />
+              <img src="/src/assets/red__star.svg" alt="rating" />
+              <img src="/src/assets/red__star.svg" alt="rating" />
               <p class="card__rating-count">${cardInfo.reviews} Reviews</p>
             </div>
             <p class="card__price">$${cardInfo.price}</p>
