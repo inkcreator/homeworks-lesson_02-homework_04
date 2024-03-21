@@ -4,45 +4,34 @@ const sellersTabCardWrapper = document.querySelector('.sellers').querySelector("
 
 const sellersTabBtnWrapper = document.querySelector('.sellers').querySelector(".tab__btn-wrapper");
 
-sellersTabBtnWrapper.addEventListener("click",(event) => {
-  const target = event.target
-  const ovalButtons = sellersTabBtnWrapper.querySelectorAll('button')
-  ovalButtons.forEach(btn => {
-    btn.classList.remove('active')
-  })
-  target.classList.add('active')
-  
-} )
 
-const earphonesTabBtnWrapper = document.querySelector('.earphones').querySelector(".tab__btn-wrapper");
 
-earphonesTabBtnWrapper.addEventListener("click",(event) => {
-  const target = event.target
-  const ovalButtons = earphonesTabBtnWrapper.querySelectorAll('button')
-  ovalButtons.forEach(btn => {
-    btn.classList.remove('active')
-  })
-  target.classList.add('active')
-  
-} )
-
-const cardInfoList = [
-  {
-    cardTitle: "Наушники №1",
-    reviews: 100,
-    price: 322,
-  },
-  {
-    cardTitle: "Наушники №2",
-    reviews: 95,
-    price: 182,
-  },
-  {
-    cardTitle: "Наушники №3",
-    reviews: 88,
-    price: 123,
-  },
-];
+const cardInfoTopPicksList = [{
+  cardTitle: "Беcпроводные наушники №1",
+  reviews:100,
+  price:32,
+},{
+  cardTitle: "Беcпроводные наушники №2",
+  reviews:130,
+  price:95,
+},{
+  cardTitle: "Беcпроводные наушники №3",
+  reviews:88,
+  price:123,
+}]
+const cardInfoWatchesList = [{
+  cardTitle: "Беcпроводные наушники №456",
+  reviews:100,
+  price:32,
+},{
+  cardTitle: "Беcпроводные наушники №981",
+  reviews:130,
+  price:95,
+},{
+  cardTitle: "Беcпроводные наушники №330",
+  reviews:88,
+  price:123,
+}]
 
 function getCards(cardInfoList, elem) {
   const arr = cardInfoList.forEach(cardInfo => {
@@ -74,6 +63,23 @@ function getCards(cardInfoList, elem) {
     elem.insertAdjacentHTML("beforeend", tab);
   });
 }
-getCards(cardInfoList, sellersTabCardWrapper);
+sellersTabBtnWrapper.addEventListener("click",(event)=>{
+  const target = event.target
+  const emptyWrapper = document.createElement('div')
+  emptyWrapper.classList.add('tab__card-wrapper')
+  
 
-getCards(cardInfoList, earphonesTabCardWrapper);
+  const ovalButtons = sellersTabBtnWrapper.querySelectorAll('button')
+  ovalButtons.forEach(btn =>{
+      btn.classList.remove('active')
+
+  })
+  target.classList.add('active')
+  if(target.innerText == "Top Picks"){  
+      getCards(cardInfoTopPicksList,sellersTabCardWrapper)
+  }else{ 
+      getCards(cardInfoWatchesList,sellersTabCardWrapper,false)
+  }
+  
+})
+getCards(cardInfoTopPicksList,sellersTabCardWrapper)
